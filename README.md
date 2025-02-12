@@ -1,4 +1,5 @@
-# Web2_ntu
+# 64132786_Web2
+
 Lưu trữ các bài tập phát triển ứng dung Web2 - Thầy Mai Cường Thọ
 
 Thông tin sinh viên:
