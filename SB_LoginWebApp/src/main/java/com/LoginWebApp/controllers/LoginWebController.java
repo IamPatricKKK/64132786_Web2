@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller  // <-- Bổ sung @Controller
-public class LoginController {
+public class LoginWebController {
 
     @GetMapping("/")
     public String showLoginPage() {
