@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TongHopGiuaKi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header, .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            background-color: #555;
+            padding: 10px;
+        }
+        .menu div {
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .menu div:hover {
+            background-color: #777;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            padding: 20px;
+        }
+        .content .left {
+            width: 80%;
+            display: flex;
+            gap: 10px;
+        }
+        .content .left img {
+            width: 100%;
+            height: auto;
+        }
+        .content .right {
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">NTU</div>
+    <div class="menu">
+        <div>HOME</div>
+        <div>ABOUT</div>
+        <div>LIST</div>
+        <div>ADDNEW</div>
+    </div>
+    <div class="content">
+        <div class="left">
+            <img src="https://bizweb.dktcdn.net/100/342/038/articles/ft4c0vbd2lce8wse3klvvxuzkwttkrr8.jpeg?v=1608257619057" alt="Hình ảnh 1">
+        </div>
+        <div class="right"></div>
+    </div>
+    <div class="footer">PHAM XUAN TRUONG</div>
+</body>
+</html>
