@@ -1,0 +1,21 @@
+.background {
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.background img {
+    width: 100%;
+    height: auto;
+}
+.menu div {
+    cursor: pointer;
+}
+.row{
+	height: 100%;
+	position: relative;
+}
+.row .right img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
