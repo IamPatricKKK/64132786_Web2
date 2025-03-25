@@ -16,7 +16,17 @@
             flex-direction: column;
             min-height: 100vh;
         }
-        .header, .footer {
+        .background{
+        	align-items: center;
+		    justify-content: center;
+		    overflow: hidden;
+		    position: relative;
+        }
+        .background img{
+        	width: 100%;
+        	height: auto;
+        }
+        .footer {
             background-color: #333;
             color: white;
             text-align: center;
@@ -39,24 +49,35 @@
         .content {
             flex: 1;
             display: flex;
-            padding: 20px;
+            flex-wrap: wrap;
         }
         .content .left {
-            width: 80%;
+            width: 70%;
             display: flex;
             gap: 10px;
-        }
-        .content .left img {
-            width: 100%;
-            height: auto;
+            padding: 20px;
+            overflow: hidden;
         }
         .content .right {
-            width: 20%;
+            width: 30%;
+            display: flex;
+            height: 500px;
+		    align-items: center;
+		    justify-content: center;
+		    overflow: hidden;
+		    position: relative;
+        }
+        .content .right img{
+            height: 100%;
+		    width: auto;
+		    object-fit: cover;
         }
     </style>
 </head>
 <body>
-    <div class="header">NTU</div>
+    <div class="background">
+    	<img src="https://bizweb.dktcdn.net/100/342/038/articles/ft4c0vbd2lce8wse3klvvxuzkwttkrr8.jpeg?v=1608257619057" alt="Hinh anh 1">
+    </div>
     <div class="menu">
         <div>HOME</div>
         <div>ABOUT</div>
@@ -65,9 +86,11 @@
     </div>
     <div class="content">
         <div class="left">
-            <img src="https://bizweb.dktcdn.net/100/342/038/articles/ft4c0vbd2lce8wse3klvvxuzkwttkrr8.jpeg?v=1608257619057" alt="Hình ảnh 1">
+            
         </div>
-        <div class="right"></div>
+        <div class="right">
+        	<img src="https://imgs.vietnamnet.vn/Images/vnn/2013/12/16/10/20131216100626-a4.jpg" alt="hinh anh 2">
+        </div>
     </div>
     <div class="footer">PHAM XUAN TRUONG</div>
 </body>
