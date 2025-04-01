@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa Sinh Viên</title>
+</head>
+<body>
+    <h2>Sửa Sinh Viên</h2>
+    <form th:action="@{/students/edit/{id}(id=${student.id})}" th:object="${student}" method="post">
+        <label>Mã SV:</label>
+        <input type="text" th:field="*{id}" readonly><br>
+        <label>Tên SV:</label>
+        <input type="text" th:field="*{name}" required><br>
+        <label>Lớp:</label>
+        <input type="text" th:field="*{classroom}" required><br>
+        <button type="submit">Cập nhật</button>
+    </form>
+</body>
+</html>

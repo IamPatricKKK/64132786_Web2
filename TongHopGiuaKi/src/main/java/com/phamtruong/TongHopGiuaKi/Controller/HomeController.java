@@ -21,8 +21,8 @@ public class HomeController {
         return "list"; 
     }
 
-    @GetMapping("/addnew")  // Trang Add New
-    public String addnew() {
-        return "addnew"; 
-    }
+//    @GetMapping("/students")  // Trang Add New
+//    public String students() {
+//        return "students"; 
+//    }
 }
