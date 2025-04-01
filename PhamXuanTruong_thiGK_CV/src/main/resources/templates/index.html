@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+        
+            <div class="col-md-3 dasboard">
+            	<p>Khoa CNTT</p>
+                <div class="list-group">
+                	<a href="/page/all" class="list-group-item list-group-item-action">Dashboard</a>
+                    <a href="/page/all" class="list-group-item list-group-item-action">Page - List</a>
+                    <a href="/page/new" class="list-group-item list-group-item-action">Page - Addnew</a>
+                    <a href="/post/all" class="list-group-item list-group-item-action">Post - List</a>
+                    <a href="/post/new" class="list-group-item list-group-item-action">Post - Addnew</a>
+                </div>
+            </div>
+            
+            <div class="col-md-9 content">
+                <div class="card">
+                    <div class="card-header text-center">Content</div>
+                    <div class="card-body">
+                        Content
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <footer class="text-center mt-4">
+            <p>&copy; 2025 by Pham Xuan Truong - FIT.NTU</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
