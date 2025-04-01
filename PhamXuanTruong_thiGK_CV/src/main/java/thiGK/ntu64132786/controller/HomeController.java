@@ -20,8 +20,8 @@ public class HomeController {
         return "pagelist"; 
     }
 
-//    @GetMapping("/list")  // Trang List
-//    public String list() {
-//        return "list"; 
-//    }
+	@GetMapping("/post")
+    public String post() {
+        return "post"; 
+    }
 }
