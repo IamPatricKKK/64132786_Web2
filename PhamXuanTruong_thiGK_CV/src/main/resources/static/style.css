@@ -4,6 +4,6 @@
 	box-sizing: border-box;
 }
 
-.dasboard{
+.dasboard, .content, .footer{
 	border:solid 1px black;
 }
