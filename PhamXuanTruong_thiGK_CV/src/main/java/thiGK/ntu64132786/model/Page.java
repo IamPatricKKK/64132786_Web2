@@ -1,27 +1,25 @@
 package thiGK.ntu64132786.model;
 
 public class Page {
-	private Long id;
+    private String id;
     private String pageName;
-    private Long parentPageID;
+    private String parentPageID;
 
-    // Constructor không tham số
     public Page() {}
 
-    // Constructor có tham số
-    public Page(Long id, String pageName, Long parentPageID) {
+    public Page(String id, String pageName, String parentPageID) {
         this.id = id;
         this.pageName = pageName;
         this.parentPageID = parentPageID;
     }
 
     // Getter & Setter
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
     public String getPageName() { return pageName; }
     public void setPageName(String pageName) { this.pageName = pageName; }
 
-    public Long getParentPageID() { return parentPageID; }
-    public void setParentPageID(Long parentPageID) { this.parentPageID = parentPageID; }
+    public String getParentPageID() { return parentPageID; }
+    public void setParentPageID(String parentPageID) { this.parentPageID = parentPageID; }
 }
