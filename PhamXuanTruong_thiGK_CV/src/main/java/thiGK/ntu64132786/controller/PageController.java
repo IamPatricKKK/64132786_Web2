@@ -1,33 +1,38 @@
 package thiGK.ntu64132786.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import thiGK.ntu64132786.model.Page;
+import thiGK.ntu64132786.repository.PageRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import thiGK.ntu64132786.model.Page;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/page")
-
+@RequestMapping("/pages")
 public class PageController {
 
-	private final List<Page> pages = new ArrayList<>();
+	private final PageRepository pageRepository;
 
-    // Hiển thị danh sách Page
-    @GetMapping("/list")
-    public String listPages(Model model) {
-        model.addAttribute("pages", pages);
-        return "page-list";
+    public PageController(PageRepository pageRepository) {
+        this.pageRepository = pageRepository;
     }
 
-    // Thêm mới Page
+    @GetMapping
+    public String listPages(Model model) {
+        model.addAttribute("pages", pageRepository.getAllPages());
+        return "pages";
+    }
+    
+    @GetMapping("/view/{id}")
+    public String viewPageDetails(@PathVariable String id, Model model) {
+        for (Page p : pageRepository.getAllPages()) {
+            if (p.getId().equals(id)) {
+                model.addAttribute("page", p);
+                return "view-page";
+            }
+        }
+        return "redirect:/pages";
+    }
+
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("page", new Page());
@@ -36,37 +41,31 @@ public class PageController {
 
     @PostMapping("/add")
     public String addPage(@ModelAttribute Page page) {
-        pages.add(page);
-        return "redirect:/page/list";
+    	pageRepository.addPage(page);
+        return "redirect:/pages";
     }
 
-    // Sửa Page
     @GetMapping("/edit/{id}")
     public String showEditForm(@PathVariable String id, Model model) {
-        for (Page p : pages) {
-            if (p.getId().equals(id)) {
-                model.addAttribute("page", p);
+        for (Page s : pageRepository.getAllPages()) {
+            if (s.getId().equals(id)) {
+                model.addAttribute("page", s);
                 return "edit-page";
             }
         }
-        return "redirect:/page/list";
+        return "redirect:/pages";
     }
 
     @PostMapping("/edit/{id}")
     public String updatePage(@PathVariable String id, @ModelAttribute Page page) {
-        for (int i = 0; i < pages.size(); i++) {
-            if (pages.get(i).getId().equals(id)) {
-                pages.set(i, page);
-                break;
-            }
-        }
-        return "redirect:/page/list";
+    	pageRepository.updatePage(id, page);
+        return "redirect:/pages";
     }
 
-    // Xóa Page
     @GetMapping("/delete/{id}")
     public String deletePage(@PathVariable String id) {
-        pages.removeIf(p -> p.getId().equals(id));
-        return "redirect:/page/list";
+    	pageRepository.deletePage(id);
+        return "redirect:/pages";
     }
 }
+

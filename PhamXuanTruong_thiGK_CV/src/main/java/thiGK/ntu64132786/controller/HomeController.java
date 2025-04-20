@@ -15,13 +15,13 @@ public class HomeController {
         return "index"; 
     }
 
-	@GetMapping("/pagelist")
+	@GetMapping("/pages")
     public String pagelist() {
-        return "pagelist"; 
+        return "pages"; 
     }
 
-	@GetMapping("/post")
-    public String post() {
-        return "post"; 
+	@GetMapping("/posts")
+    public String postlist() {
+        return "posts"; 
     }
 }

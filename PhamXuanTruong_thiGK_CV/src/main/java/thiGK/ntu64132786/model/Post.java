@@ -1,25 +1,25 @@
 package thiGK.ntu64132786.model;
 
 public class Post {
-    private String id;
-    private String title;
-    private String categoryID;
+	private String id;
+    private String Title;
+    private String CategoryID;
 
     public Post() {}
 
-    public Post(String id, String title, String categoryID) {
+    public Post(String id, String Title, String CategoryID) {
         this.id = id;
-        this.title = title;
-        this.categoryID = categoryID;
+        this.Title = Title;
+        this.CategoryID = CategoryID;
     }
 
     // Getter & Setter
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+    public String getTitle() { return Title; }
+    public void setTitle(String Title) { this.Title = Title; }
 
-    public String getCategoryID() { return categoryID; }
-    public void setCategoryID(String categoryID) { this.categoryID = categoryID; }
+    public String getCategoryID() { return CategoryID; }
+    public void setCategoryID(String CategoryID) { this.CategoryID = CategoryID; }
 }

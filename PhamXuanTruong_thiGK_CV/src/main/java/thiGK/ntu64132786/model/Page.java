@@ -1,15 +1,15 @@
 package thiGK.ntu64132786.model;
 
 public class Page {
-    private String id;
-    private String pageName;
+	private String id;
+    private String Pagename;
     private String parentPageID;
 
     public Page() {}
 
-    public Page(String id, String pageName, String parentPageID) {
+    public Page(String id, String Pagename, String parentPageID) {
         this.id = id;
-        this.pageName = pageName;
+        this.Pagename = Pagename;
         this.parentPageID = parentPageID;
     }
 
@@ -17,8 +17,8 @@ public class Page {
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
-    public String getPageName() { return pageName; }
-    public void setPageName(String pageName) { this.pageName = pageName; }
+    public String getPagename() { return Pagename; }
+    public void setPagename(String Pagename) { this.Pagename = Pagename; }
 
     public String getParentPageID() { return parentPageID; }
     public void setParentPageID(String parentPageID) { this.parentPageID = parentPageID; }

@@ -15,10 +15,10 @@
             	<p>Khoa CNTT</p>
                 <div class="list-group">
                 	<a class="list-group-item list-group-item-action" th:href="@{/}">Dasboard</a>
-                	<a class="list-group-item list-group-item-action" th:href="@{/page/pagelist}">Page - List</a>
-                    <a href="/page/new" class="list-group-item list-group-item-action">Page - Addnew</a>
-                    <a class="list-group-item list-group-item-action" th:href="@{/page/post}">Post - List</a>
-                    <a href="/post/new" class="list-group-item list-group-item-action">Post - Addnew</a>
+                	<a class="list-group-item list-group-item-action" th:href="@{/pages}">Page - List</a>
+                    <a href="/pages/add" class="list-group-item list-group-item-action">Page - Addnew</a>
+                    <a class="list-group-item list-group-item-action" th:href="@{/posts}">Post - List</a>
+                    <a href="/posts/add" class="list-group-item list-group-item-action">Post - Addnew</a>
                 </div>
             </div>
             
@@ -28,37 +28,34 @@
 		                <div class="card">
 		                    <div class="card-header">Content</div>
 		                    <div class="card-body">
-		                        <h3>Page - List</h3>
+		                        <h3>Post - List</h3>
 		                        <table class="table">
 		                            <thead>
 		                                <tr>
 		                                    <th>ID</th>
-		                                    <th>Pagename</th>
-		                                    <th>parentPageID</th>
+		                                    <th>Title</th>
+		                                    <th>Category ID</th>
 		                                    <th></th>
 		                                </tr>
 		                            </thead>
+		                            
 		                            <tbody>
-		                                <tr>
-		                                    <td>1</td>
-		                                    <td>Trang Chủ</td>
-		                                    <td>0</td>
-		                                    <td>
-		                                        <a href="/page/view/1" class="btn btn-primary btn-sm">[View]</a>
-		                                        <a href="/page/edit/1" class="btn btn-warning btn-sm">[Edit]</a>
-		                                        <a href="/page/delete/1" class="btn btn-danger btn-sm">[Delete]</a>
-		                                    </td>
-		                                </tr>
-		                            </tbody>
+										<tr th:each="p : ${posts}">
+										    <td th:text="${p.id}"></td>
+										    <td th:text="${p.Title}"></td>
+										    <td th:text="${p.CategoryID}"></td>
+										    <td>
+										        <a th:href="@{'/posts/view/' + ${p.id}}" class="btn btn-primary btn-sm">[View]</a>
+										        <a th:href="@{'/posts/edit/' + ${p.id}}" class="btn btn-warning btn-sm">[Edit]</a>
+										        <a th:href="@{'/posts/delete/' + ${p.id}}" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">[Delete]</a>
+										    </td>
+										</tr>
+									</tbody>
+		                            
 		                        </table>
-		                        <a href="/page/new" class="btn btn-success">Thêm mới Page</a>
 		                    </div>
 		                </div>
 		            </div>
-                    <!-- <div class="card-header text-center">Content</div>
-                    <div class="card-body">
-                        Content
-                    </div> -->
                 </div>
             </div>
             
